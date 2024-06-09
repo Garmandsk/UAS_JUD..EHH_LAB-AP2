@@ -52,16 +52,15 @@ void gachak(int digit, int row);
 void kartu(int kartu[], int size);
 void blackjack();
 /*☆☆☆☆☆☆☆☆☆☆☆☆*/
-
 int main() {
     string pilihangame;
-    
+
     awal:
     system ("cls");
     menu();
     printf("\n");
-    cout<<"Pilihan Anda: "; getline(cin, pilihangame); printf("\n");
-    
+    cout<<"Pilihan Anda(1/2/3/4/5): "; getline(cin, pilihangame); printf("\n");
+
     if(pilihangame == "1"){
         slot();
     system("cls");
@@ -86,6 +85,10 @@ int main() {
     cout<<"\nTekan Enter Untuk Kembali Ke Menu Utama"<<endl;
     getchar(); 
     goto awal;
+    }else if(pilihangame == "5"){       
+    cout<<"\nTerimakasih Dan Sampai Jumpa!"<<endl;
+    getchar(); 
+    return 0;
     }else{
         cout<<"Error: Masukkan Tidak Valid"<<endl;
         cout<<"Tekan Enter Untuk Input Ulang"<<endl;
@@ -123,6 +126,7 @@ void menu(){
     cout << "\033[33m"<<"                               ||           "<<"\033[0m"<<"OTHERS"<<"\033[33m"<<"          ||                            "<< endl;
     cout << "\033[33m"<<"                               ||---------------------------||"<< endl;
     cout << "\033[33m"<<"                               ||         "<<"\033[0m"<<"4. "<<"\033[35m"<<"DOMPET"<<"\033[0m"<<"\033[33m"<<"         ||                            "<< endl;
+    cout << "\033[33m"<<"                               ||         "<<"\033[0m"<<"5. EXIT"<<"\033[0m"<<"\033[33m"<<"           ||                            "<< endl;
     cout <<"\033[33m";
     cout << "                               II===========================II                            "<<"\033[0m"<< endl;
     cout << "                            "<<"\033[32m"<<"PILIH GAME ATAU CEK WALLET (1/2/3/4): " <<"\033[0m"<< endl;
@@ -310,7 +314,7 @@ void slot() {
     game game1;
     game1.nama =  "\033[31m""S""\033[0m""\033[33m""L""\033[0m""\033[32m""O""\033[0m""\033[34m""T""\033[0m";
     game1.petunjuk = "1. Harga Token untuk sekali tarik adalah 10 koin\n2. Pemain Akan Mendapatkan JACKPOT Jika Terdapat Ketiga Angka Bernilai Sama. Untuk Semua Angka\n3. Jika JACKPOT pemain akan mendapatkan +100 koin";
-    
+
     b:
     system("cls");
         tampil_gacha();
@@ -352,7 +356,7 @@ void slot() {
         cout << "\033[32m"<<"'y'" << "\033[0m" << " untuk bermain, "<< "\033[31m" << "'n' " << "\033[0m" << "untuk kembali ke Menu Utama: ";
         cin >> pil;
         cout << "====================================================================" << endl;
-        
+
         while (true) {
         if (pil == "n" || pil == "N") {
             return;
@@ -370,13 +374,13 @@ void slot() {
             spin_animation(angka_acak, 2000);
 
             for (int i = 0; i < 3; i++) {
-                angka_acak[i] = rand() % 10;
+                angka_acak[i] = 1;
             }
             system("cls");
 
             tampil_gacha();
             display_numbers(angka_acak);
-            
+
             ukuran1++; ukuran2++; g++; 
             if (angka_acak[0] == angka_acak[1] && angka_acak[0] == angka_acak[2]) {
                 cout << "\033[1m\033[37m";
@@ -403,7 +407,7 @@ void slot() {
             getchar(); getchar();
             goto b;
         }
-        
+
         cout << "Koin: " << "\033[33m" << koin << endl << endl;
         cout << "\033[0m";
         a:
@@ -454,7 +458,7 @@ void gelas(){
 void tampil_gelas(int acak) {
     vector<string> isigelas(4, "X");
     isigelas[acak - 1] = "O";
-    
+
     cout << "Koin: " << "\033[33m" << koin << endl << endl;
     cout << "\033[1m\033[34m";
     cout << "\033[1m\033[34m"<<"           88888888 8888888 d8888b.  88888  88   88"<< "\033[1;37m" <<"      8888888 8888888 88       88888   888888 " << endl;
@@ -488,7 +492,7 @@ system("cls");
     game2.petunjuk = "Pemain Menebak Keempat Gelas Untuk Mendapatkan Bola Yang Terdapat Di Gelas Yang Tepat, Sebanyak 3x Percobaan";
     srand(time(0));
     bool kondisi = true;
-    
+
     a:
     while (kondisi) {
         acak = 1 + (rand() % 4);
@@ -499,13 +503,13 @@ system("cls");
         cout<<"Pilihan anda!" << endl;
         cout << "\033[32m" << "'y'" << "\033[0m" << " untuk bermain, "<< "\033[31m" << "'n' " << "\033[0m" << "untuk kembali ke Menu Utama: ";
         cin>>pil3;
-        
+
         if(pil3 == "n" || pil3 == "N"){
             return;
         }
         else if(pil3 == "y" || pil3 == "Y"){
         system("cls");
-        
+
         c:
         tampil_gelas(acak);
         cout << "Apakah Omae Siap? Tekan Enter!" << endl;
@@ -520,7 +524,7 @@ system("cls");
             system("cls");
         }
         bool tebakan_benar = false;
-        
+
         ukuran1++; ukuran2++; g++; 
         for (int i = 1; i <= 3; i++) {
             cout << "Tebakan Ke-" << i << " (1-4): "; cin >> tebakan;
@@ -545,7 +549,7 @@ system("cls");
             cout << "\033[0m";
            g--; ukuran1--; ukuran2--;  
         }
-        
+
         do{
         cout << "Ingin Main Lagi [-" <<  "\033[33m" << "10 " << "\033[0m" << "koin]? (y/n): "; cin >> pil1;
         if (pil1 == "y" || pil1 == "Y") {
@@ -735,7 +739,7 @@ void blackjack() {
     game game3;
     game3.nama = "\033[1m\033[30m""BLACK""\033[0m""JACK!""\033[33m""\033[0m"; 
     game3.petunjuk = "\n1. Masukkan jumlah koin yang ingin anda mainkan\n2. Blackjack kali ini sama seperti pada umumnya dimana ketika pemain mendapatkan total 21 akan mendpatakan blackjack\n3. Disini pemain akan melawan dealer untuk mendapatkan kemenangan\n4. Untuk blackjack ini memiliki peraturan khusus dimana pemain hanya bisa menarik 4 kartu saja\n5. Jika menang pemain akan mendapatkan 2x dari koin yang dimainkan (10 = 20), jika kalah koin yang dimainkan akan hangus, jika seri pemain akan mendapatkan koinnya kembali\n";
-    
+
     ulang:
     cabutlu:
     system ("cls");
@@ -767,7 +771,7 @@ void blackjack() {
                 cin.ignore(); cin.get();
             goto cabutlu;
         }
-    
+
     ukuran1++; ukuran2++; g++; 
     while (true) {
         system("cls");
@@ -808,7 +812,7 @@ void blackjack() {
             kartu_dealer[j] = angka_acak2; j++;
             poin_dealer += angka_acak2;
         } else if (pil == "s" || pil == "S") {
-            
+
                 angka_acak2 = 1 + (rand() % 11);
                 if(poin_dealer > 10 && angka_acak2 == 11){
                     angka_acak2 -= 10;
@@ -834,7 +838,7 @@ void blackjack() {
         cout << "\033[32m" << "Kartu Anda: " << "\033[0m" << endl;
         kartu(kartu_pemain, i);
         cout << "\033[32m" << "Anda: " << "\033[0m" << poin_pemain << endl;
-        
+
         if((poin_pemain > 21 && poin_dealer > 21) || (poin_pemain == 21 && poin_dealer == 21)){
             cout << "\nSeri!" << endl;
             koin += 0;
@@ -905,7 +909,7 @@ void blackjack() {
             j = 0;
             goto main;
             break;
-            
+
         } else if (pil1 == "n" || pil1 == "N") {
             cout << "Terima Kasih Telah Bermain!" << endl;
             break;
