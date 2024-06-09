@@ -9,7 +9,7 @@ Link Google Drive:
 https://drive.google.com/drive/u/1/folders/1Fi9FeE8EKu-2IATX_3ZJdjX7QLLZzDaM
 
 Output Tampilan Masukkan Menu Awal:
-![alt text](?raw=true)
+![alt text](https://github.com/Garmandsk/UAS_JUD..EHH_LAB-AP2/blob/main/Menu.png?raw=true)
 
 Output Tampilan Masukkan Game Gacha:
 ![alt text](https://github.com/Garmandsk/UAS_JUD..EHH_LAB-AP2/blob/main/Gacha.png?raw=true)
