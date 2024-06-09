@@ -1,4 +1,4 @@
-UAS_KEL JUD..EHH_AP2
+UAS_KEL JUD..EHH_LAB AP2
 
 Anggota:
 Qadrul Dzul Dina 231401088
