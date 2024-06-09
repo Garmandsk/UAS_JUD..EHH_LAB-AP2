@@ -98,7 +98,7 @@ int main() {
 
 void dompet(){
     system("cls");
-    cout <<"Koin mu: " <<"\033[33m"<< koin <<"\033[0m"<< endl;
+    cout <<"Koin mu: " <<"\033[33m"<< *ptr_koin <<"\033[0m"<< endl;
     cout <<"\nRiwayat Koin Yang didapat:" << endl;
     for(int i = 1; i < ukuran2; i++){
         cout<<i<<". +"<<riwayat_koin[i]<<"["<<riwayat_game[i]<<"]"<<endl;
