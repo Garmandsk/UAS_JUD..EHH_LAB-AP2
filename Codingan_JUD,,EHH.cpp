@@ -129,7 +129,7 @@ void menu(){
     cout << "\033[33m"<<"                               ||         "<<"\033[0m"<<"5. EXIT"<<"\033[0m"<<"\033[33m"<<"           ||                            "<< endl;
     cout <<"\033[33m";
     cout << "                               II===========================II                            "<<"\033[0m"<< endl;
-    cout << "                            "<<"\033[32m"<<"PILIH GAME ATAU CEK DOMPET (1/2/3/4/5): " <<"\033[0m"<< endl;
+    cout << "                            "<<"\033[32m"<<"PILIH GAME ATAU CEK DOMPET (1/2/3/4): " <<"\033[0m"<< endl;
 }
 
 
